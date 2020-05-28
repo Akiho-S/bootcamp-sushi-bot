@@ -1,22 +1,22 @@
 "use strict";
 
-/** 
+/**
  * Import Packages
  */
 const server = require("express")();
 const bot_express = require("bot-express");
 
-/** 
+/**
  * Middleware Configuration
  */
 server.listen(process.env.PORT || 5000, () => {
     console.log("server is running...");
 });
 
-/** 
+/**
  * Mount bot-express
  */
-server.use("/bot/webhook", bot_express({
+server.use("webhook", bot_express({
     language: "ja",
     messenger: {
         line: {
